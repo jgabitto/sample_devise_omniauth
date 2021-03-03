@@ -273,7 +273,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, Rails.application.credentials.fetch(:github_api_public), Rails.application.credentials.fetch(:github_api_secret) scope: 'user,public_repo'
   config.omniauth :github, Rails.application.credentials.fetch(:github_api_public), Rails.application.credentials.fetch(:github_api_secret), scope: 'user:email'
-
+  config.navigational_formats = [:json]
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
