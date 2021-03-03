@@ -18,6 +18,7 @@ gem 'puma', '~> 4.1'
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 # gem 'omniauth', '~> 2.0', '>= 2.0.3'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem "omniauth-rails_csrf_protection"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
