@@ -35,6 +35,7 @@ module DeviseSignInOmni
     config.api_only = true
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
     # config.middleware.use ActionDispatch::Flash
     # config.action_controller.per_form_csrf_tokens = false
     # config.action_controller.default_protect_from_forgery = true
