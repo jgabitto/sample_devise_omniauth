@@ -1,6 +1,5 @@
 class Api::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     include ActionController::RequestForgeryProtection
-    skip_before_action :verify_authenticity_token, only: :create
     respond_to :json
 
     def github
