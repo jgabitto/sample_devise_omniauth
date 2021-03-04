@@ -1,5 +1,5 @@
 class Api::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    include ActionController::RequestForgeryProtection
+    # include ActionController::RequestForgeryProtection
     respond_to :json
 
     def github
