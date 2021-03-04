@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    # include ActionController::RequestForgeryProtection
+    include ActionController::RequestForgeryProtection
     # skip_before_action :verify_authenticity_token
     # include ActionController::Cookies
     # include ActionController::RequestForgeryProtection
