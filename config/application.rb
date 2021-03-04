@@ -33,9 +33,10 @@ module DeviseSignInOmni
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.session_store :cookie_store, key: '_APP_session', expire_after: 1.day
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-    config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+    
     # config.middleware.use ActionDispatch::Flash
     # config.action_controller.per_form_csrf_tokens = false
     # config.action_controller.default_protect_from_forgery = true
