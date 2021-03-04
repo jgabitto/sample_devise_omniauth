@@ -1,5 +1,5 @@
 class Api::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip_before_action :verify_authenticity_token
+    skip_before_action :verify_authenticity_token, only: :github
     respond_to :json
 
     def github
