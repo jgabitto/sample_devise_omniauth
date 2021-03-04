@@ -1,5 +1,7 @@
 class Api::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     skip_before_action :verify_authenticity_token
+    respond_to :json
+    
     def github
         @user = User.from_omniauth(request.env["omniauth.auth"])
         p @user
