@@ -40,5 +40,17 @@ module DeviseSignInOmni
     # config.middleware.use ActionDispatch::Flash
     # config.action_controller.per_form_csrf_tokens = false
     # config.action_controller.default_protect_from_forgery = true
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        #Removed origins Array, changed syntax as documented: https://www.rubydoc.info/gems/rack-cors/0.4.0
+        origins 'http://localhost:3001', 'http://localhost:3000', 'https://sample-devise-omniauth.netlify.app/'
+        resource '*',
+          headers: :any,
+          expose: 'Authorization',
+          methods: [:get, :post, :patch, :put, :delete, :options, :head],
+          credentials: true       
+      end
+  end    
   end
 end
